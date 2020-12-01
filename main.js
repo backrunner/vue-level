@@ -13,18 +13,21 @@ const plugin = {
     );
     Vue.prototype.$db = db;
     if (config.shortcuts) {
-      Vue.prototype.$dbSet = async (key, value) => {
+      const setFunc = async (key, value) => {
         if (typeof key !== 'string') {
           throw new Error('Key must be a string.');
         }
-        return db.set(key, JSON.stringify(value));
+        return db.put(key, JSON.stringify(value));
       };
-      Vue.prototype.$dbGet = async (key) => {
+      const getFunc = async (key) => {
         if (typeof key !== 'string') {
           throw new Error('Key must be a string.');
         }
         return JSON.parse(await db.get(key));
       };
+      Vue.prototype.$dbSet = setFunc;
+      Vue.prototype.$dbPut = setFunc;
+      Vue.prototype.$dbGet = getFunc;
     }
   },
 };

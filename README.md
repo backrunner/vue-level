@@ -34,6 +34,7 @@ Vue.use(VueLevel, {
 
 await this.$dbGet(key);
 await this.$dbSet(key, value); // key must be a string
+await this.$dbPut(key, value); // same as this.$dbSet
 
 ```
 
