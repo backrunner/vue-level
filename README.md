@@ -1,24 +1,42 @@
 # vue-level
 
-## Project setup
-```
-npm install
+A wrapper of level-js for Vue.
+## Install
+
+```bash
+$ npm install vue-level --save-dev
 ```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
+## Usage
+
+```js
+import Vue from 'vue';
+import VueLevel from 'vue-level';
+
+Vue.use(VueLevel);
+
+// then use this.$db to access your database.
 ```
 
-### Compiles and minifies for production
-```
-npm run build
+You can set options like this, it's not necessary:
+
+```js
+Vue.use(VueLevel, {
+  name: 'my-database', // name of your db, default is site-data
+  levelOptions: { // options pass to level
+    prefix: 'level-',
+    version: 1,
+  },
+  shortcuts: true, // if set to true, we will add some functions
+});
+
+// shortcuts
+
+await this.$dbGet(key);
+await this.$dbSet(key, value); // key must be a string
+
 ```
 
-### Lints and fixes files
-```
-npm run lint
-```
+## License
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+MIT
