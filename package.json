@@ -1,6 +1,6 @@
 {
   "name": "vue-level",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "A wrapper of level-js for Vue.",
   "main": "dist/vue-level.umd.min.js",
   "scripts": {

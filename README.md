@@ -27,7 +27,7 @@ Vue.use(VueLevel, {
     prefix: 'level-',
     version: 1,
   },
-  shortcuts: true, // if set to true, we will add some functions
+  shortcuts: true, // if set to true, we will add some functions, default is false
 });
 
 // shortcuts
