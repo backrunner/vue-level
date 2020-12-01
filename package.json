@@ -28,6 +28,6 @@
     ],
     "parserOptions": {
       "parser": "babel-eslint"
-    },
+    }
   }
 }
