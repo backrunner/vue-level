@@ -4,6 +4,9 @@ import leveljs from 'level-js';
 
 const plugin = {
   install(Vue, config) {
+    if (Vue.prototype.$db) {
+      return;
+    }
     const db = levelup(
       leveljs(config.name || 'site-data'),
       config.levelOptions || null,
