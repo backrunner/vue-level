@@ -1,14 +1,10 @@
 {
   "name": "vue-level",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "A wrapper of level-js for Vue.",
   "main": "main.js",
-  "scripts": {
-    "build": "vue-cli-service build --target lib --name vue-level ./src/main.js && rimraf ./dist/demo.html"
-  },
   "files": [
-    "dist",
-    "src"
+    "main.js"
   ],
   "dependencies": {
     "level-js": "^5.0.2",
